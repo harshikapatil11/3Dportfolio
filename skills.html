@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Skills</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            background: #f3f5f8;
+            color: #3d535f;
+        }
+
+        nav {
+            background: #fff;
+            padding: 20px 10%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .logo b {
+            color: #7f00ff;
+            font-size: 40px;
+        }
+
+        .navItems {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        .navItems a {
+            text-decoration: none;
+            color: #3d535f;
+            font-size: 18px;
+        }
+
+        .navItems a:hover {
+            color: #7f00ff;
+        }
+
+        section {
+            padding: 60px 10%;
+            background: #fff;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            border-bottom: 4px solid #7f00ff;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 20px;
+            max-width: 900px;
+            margin: auto;
+            margin-top: 40px;
+        }
+
+        .skill-item {
+            background: #f3f5f8;
+            padding: 15px 20px;
+            border-left: 5px solid #7f00ff;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+            border-radius: 8px;
+            font-size: 1em;
+            transition: transform 0.3s ease;
+        }
+
+        .skill-item:hover {
+            transform: scale(1.05);
+            background: #fff;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">folio<b>.</b></div>
+        <ul class="navItems">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="skills.html" style="color:#7f00ff;">Skills</a></li>
+        </ul>
+    </nav>
+
+    <section id="skills">
+        <h2>My Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-item">HTML / CSS</div>
+            <div class="skill-item">JavaScript</div>
+            <div class="skill-item">React JS</div>
+            <div class="skill-item">Python</div>
+            <div class="skill-item">Docker</div>
+            <div class="skill-item">Power BI</div>
+            <div class="skill-item">API & Postman</div>
+            <div class="skill-item">Assembly Language</div>
+            <div class="skill-item">Problem Solving</div>
+        </div>
+    </section>
+</body>
+</html>
