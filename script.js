@@ -1,5 +1,4 @@
-
-    const container = document.querySelector('.bubble-container');
+const container = document.querySelector('.bubble-container');
 
     function createBubble() {
         const bubble = document.createElement('div');
@@ -9,20 +8,21 @@
         bubble.style.height = `${size}px`;
         bubble.style.left = `${Math.random() * window.innerWidth}px`;
         bubble.style.top = `${window.innerHeight + size}px`;
-        bubble.speed = Math.random() * 1 + 0.5; // speed in px/frame
+        bubble.dataset.speed = Math.random() * 1 + 0.5; // store speed as data
         container.appendChild(bubble);
         return bubble;
     }
 
     const bubbles = [];
-    for (let i = 0; i < 6; i++) { // number of bubbles
+    for (let i = 0; i < 10; i++) { // Increase number of bubbles if you want
         bubbles.push(createBubble());
     }
 
     function animateBubbles() {
         bubbles.forEach(bubble => {
             let top = parseFloat(bubble.style.top);
-            top -= bubble.speed;
+            let speed = parseFloat(bubble.dataset.speed);
+            top -= speed;
             if (top + bubble.offsetHeight < 0) {
                 top = window.innerHeight + bubble.offsetHeight;
                 bubble.style.left = `${Math.random() * window.innerWidth}px`;
@@ -33,4 +33,3 @@
     }
 
     animateBubbles();
-

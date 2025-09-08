@@ -15,8 +15,10 @@ body {
     overflow-x: hidden;
     background-color: #f9f9fb;
     color: #3d535f;
+    line-height: 1.6;
 }
 
+/* ---------- CONTAINER ---------- */
 .container {
     width: 100%;
     min-height: 100vh;
@@ -29,11 +31,12 @@ nav {
     align-items: center;
     height: 80px;
     padding: 0 10%;
-    background-color: #f9f9fb;
+    background-color: #ffffffcc;
+    backdrop-filter: blur(10px);
     position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
 }
 
 .logo {
@@ -41,6 +44,7 @@ nav {
     font-weight: 700;
     color: #3d5357;
     text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .logo b {
@@ -55,18 +59,21 @@ nav {
 }
 
 .navItems a {
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 500;
     color: #3d535f;
     text-decoration: none;
-    transition: color 0.3s ease;
+    padding: 6px 12px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
 }
 
 .navItems a:hover {
     color: #7f00ff;
+    background-color: #f0ebff;
 }
 
-/* ---------- HERO / WRAPPER ---------- */
+/* ---------- WRAPPER / HERO ---------- */
 .wrapper {
     display: flex;
     align-items: center;
@@ -75,6 +82,7 @@ nav {
     padding: 0 10%;
     position: relative;
     overflow: hidden;
+    background: linear-gradient(to bottom right, #f9f9fb, #ffffff);
 }
 
 .wrapper::before,
@@ -107,6 +115,7 @@ nav {
     50% { transform: translateY(-20px); }
 }
 
+/* ---------- COLUMNS ---------- */
 .cols {
     width: 50%;
     position: relative;
@@ -138,10 +147,11 @@ nav {
 }
 
 h1 {
-    font-size: 3em;
+    font-size: 3.2em;
     font-weight: 900;
     color: #3d535f;
     line-height: 1.2;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
 .multitext {
@@ -153,10 +163,10 @@ p {
     margin-top: 20px;
     font-size: 1rem;
     color: #555;
-    line-height: 1.8;
     max-width: 500px;
 }
 
+/* ---------- BUTTONS ---------- */
 .btns {
     margin-top: 30px;
     display: flex;
@@ -173,7 +183,7 @@ button {
     border-radius: 10px;
     transition: all 0.3s ease;
     font-weight: 600;
-    box-shadow: 0 4px 10px rgba(127,0,255,0.2);
+    box-shadow: 0 4px 10px rgba(127, 0, 255, 0.2);
 }
 
 button:hover {
@@ -224,6 +234,10 @@ section {
     background-color: #fff;
 }
 
+section:nth-child(even) {
+    background-color: #f2f2f7;
+}
+
 section h2 {
     font-size: 2.5em;
     color: #3d535f;
@@ -233,6 +247,7 @@ section h2 {
     padding-bottom: 8px;
 }
 
+/* ---------- LISTS ---------- */
 .project-list,
 .edu-list {
     display: flex;
@@ -241,23 +256,27 @@ section h2 {
 }
 
 .project,
-.edu-item {
-    background: #f9f9fb;
+.edu-item,
+.exp-item,
+.skill-list p {
+    background: #ffffff;
     padding: 20px;
     border-left: 6px solid #7f00ff;
     border-radius: 8px;
-    box-shadow: 0 6px 12px rgba(0,0,0,0.08);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.06);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .project:hover,
-.edu-item:hover {
+.edu-item:hover,
+.exp-item:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.12);
 }
 
 .project h3,
-.edu-item h3 {
+.edu-item h3,
+.exp-item h3 {
     font-size: 1.4em;
     margin-bottom: 10px;
     color: #3d535f;
@@ -265,11 +284,13 @@ section h2 {
 }
 
 .project p,
-.edu-item p {
+.edu-item p,
+.exp-item p {
     color: #555;
     font-size: 1rem;
 }
 
+/* ---------- BUBBLE BACKGROUND ---------- */
 .bubble-container {
     position: absolute;
     width: 100%;
@@ -277,17 +298,18 @@ section h2 {
     overflow: hidden;
     top: 0;
     left: 0;
-    z-index: 0; /* behind your content */
+    z-index: 0;
+    pointer-events: none;
 }
 
 .bubble {
     position: absolute;
     border-radius: 50%;
-    background: linear-gradient(135deg, #7f00ff, #ff6ec4);
-    opacity: 0.3;
-    z-index: 0;
+    background: radial-gradient(circle, #7f00ff, #ff6ec4);
+    opacity: 0.2;
+    filter: blur(3px);
+    box-shadow: 0 0 20px rgba(127, 0, 255, 0.3);
 }
-
 
 /* ---------- RESPONSIVE ---------- */
 @media (max-width: 992px) {
@@ -325,5 +347,10 @@ section h2 {
         flex-wrap: wrap;
         justify-content: center;
         margin-top: 10px;
+    }
+
+    button {
+        width: 100%;
+        text-align: center;
     }
 }
